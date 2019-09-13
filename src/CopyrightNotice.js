@@ -1,11 +1,9 @@
 import React from "react";
+import Copymark from "./Copymark";
 import CopyrightYearSpan from "./CopyrightYearSpan";
 import CopyrightHolderSpan from "./CopyrightHolderSpan";
 import RightsStatementSpan from "./RightsStatementSpan";
 import { DEFAULT_COPYRIGHT_NOTICE_CLASSNAME } from "./";
-
-const Copymark = ({ mark }) =>
-  mark ? <span>{mark}</span> : <span>&copy;</span>;
 
 export const periodAsNeededBetween = (holder, rightsStatement) => {
   if (!rightsStatement) {
@@ -30,7 +28,7 @@ const CopyrightNotice = ({
   rightsStatementClassName = className + "-rights-statement"
 }) => (
   <span className={className}>
-    <Copymark mark={mark} className={markClassName}></Copymark>{" "}
+    <Copymark mark={mark} className={markClassName} />{" "}
     <CopyrightYearSpan
       className={yearRangeClassName}
       year={year}
