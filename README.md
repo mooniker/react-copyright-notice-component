@@ -1,5 +1,12 @@
 # React Component for Copyright Notice (`<CopyrightNotice />`)
 
+[![codecov](https://codecov.io/gh/mooniker/react-copyright-notice-component/branch/master/graph/badge.svg)](https://codecov.io/gh/mooniker/react-copyright-notice-component)
+[![Coverage Status](https://coveralls.io/repos/github/mooniker/react-copyright-notice-component/badge.svg?branch=master)](https://coveralls.io/github/mooniker/react-copyright-notice-component?branch=master)
+[![Known Vulnerabilities](https://snyk.io//test/github/mooniker/react-copyright-notice-component/badge.svg?targetFile=package.json)](https://snyk.io//test/github/mooniker/react-copyright-notice-component?targetFile=package.json)
+[![dependencies Status](https://david-dm.org/mooniker/react-copyright-notice-component/status.svg)](https://david-dm.org/mooniker/react-copyright-notice-component)
+[![npm version](https://badge.fury.io/js/react-copyright-notice-component.svg)](https://badge.fury.io/js/react-copyright-notice-component)
+[![GitHub license](https://img.shields.io/github/license/mooniker/react-copyright-notice-component)](https://github.com/mooniker/react-copyright-notice-component/blob/master/LICENSE)
+
 Use this component to put a semantic copyright notice on a page with React.
 
 ## Getting started
