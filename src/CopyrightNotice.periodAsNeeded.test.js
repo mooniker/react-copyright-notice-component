@@ -1,21 +1,11 @@
-import { periodAsNeededBetween as periodAsNeeded } from "./CopyrightNotice";
-
-// const periodAsNeededBetween = (holder, rightsStatement) => {
-//   if (!rightsStatement) {
-//     return "";
-//   }
-//   if (holder.trim().endsWith(".")) {
-//     return " ";
-//   }
-//   return ". ";
-// };
+import periodAsNeeded from "./CopyrightNotice.periodAsNeeded";
 
 describe("periodAsNeededBetween function", () => {
   test("should return empty string if no rights statement supplied", () => {
     expect(periodAsNeeded("ABC LLC")).toBe("");
   });
 
-  test("should not include period but return a space if copyright holder string aleady ends with a period and rights statement to follow is supplied", () => {
+  test("should not include period but return a space if copyright holder string aleady ends with a period and rights statement to follow supplied", () => {
     expect(periodAsNeeded("ABC LLC.", "All rights reserved.")).toBe(" ");
   });
 

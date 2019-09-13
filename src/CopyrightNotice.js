@@ -2,18 +2,9 @@ import React from "react";
 import Copymark from "./Copymark";
 import CopyrightYearSpan from "./CopyrightYearSpan";
 import CopyrightHolderSpan from "./CopyrightHolderSpan";
+import periodAsNeeded from "./CopyrightNotice.periodAsNeeded";
 import RightsStatementSpan from "./RightsStatementSpan";
 import { DEFAULT_COPYRIGHT_NOTICE_CLASSNAME } from "./";
-
-export const periodAsNeededBetween = (holder, rightsStatement) => {
-  if (!rightsStatement) {
-    return "";
-  }
-  if (holder.trim().endsWith(".")) {
-    return " ";
-  }
-  return ". ";
-};
 
 const CopyrightNotice = ({
   className = DEFAULT_COPYRIGHT_NOTICE_CLASSNAME,
@@ -40,7 +31,7 @@ const CopyrightNotice = ({
     >
       {copyrightHolder}
     </CopyrightHolderSpan>
-    {periodAsNeededBetween(copyrightHolder, rightsStatement)}
+    {periodAsNeeded(copyrightHolder, rightsStatement)}
     <RightsStatementSpan
       className={rightsStatementClassName}
       rightsStatement={rightsStatement}
