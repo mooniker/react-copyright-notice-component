@@ -20,5 +20,5 @@ script:
 
 after_script:
   - npx codecov
-  - npx coveralls
+  # - npx coveralls
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
