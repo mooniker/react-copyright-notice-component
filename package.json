@@ -1,6 +1,6 @@
 {
   "name": "react-copyright-notice-component",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A React component to render copyright notices",
   "main": "build/index.js",
   "scripts": {
