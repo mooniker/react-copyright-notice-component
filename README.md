@@ -5,7 +5,7 @@
 [![Known Vulnerabilities](https://snyk.io//test/github/mooniker/react-copyright-notice-component/badge.svg?targetFile=package.json)](https://snyk.io//test/github/mooniker/react-copyright-notice-component?targetFile=package.json)
 [![dependencies Status](https://david-dm.org/mooniker/react-copyright-notice-component/status.svg)](https://david-dm.org/mooniker/react-copyright-notice-component)
 [![npm version](https://badge.fury.io/js/react-copyright-notice-component.svg)](https://badge.fury.io/js/react-copyright-notice-component)
-[![GitHub license](https://img.shields.io/github/license/mooniker/react-copyright-notice-component)](https://github.com/mooniker/react-copyright-notice-component/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/mooniker/react-copyright-notice-component)](https://github.com/mooniker/react-copyright-notice-component/blob/master/LICENSE) [![Greenkeeper badge](https://badges.greenkeeper.io/mooniker/react-copyright-notice-component.svg)](https://greenkeeper.io/)
 
 Use this component to put a semantic copyright notice on a page with React.
 
