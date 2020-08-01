@@ -46,7 +46,7 @@ describe("CopyrightHolderSpan", () => {
   test("should render for a given organization by its alternate name", () => {
     act(() => {
       render(
-        <CopyrightHolderSpan copyrightHolderType="alternateName">
+        <CopyrightHolderSpan copyrightHolderType="org:alternateName">
           Bluth Company
         </CopyrightHolderSpan>,
         container

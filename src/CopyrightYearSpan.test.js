@@ -3,6 +3,7 @@ import { render, unmountComponentAtNode } from "react-dom";
 import { act, shallow } from "react-dom/test-utils";
 import CopyrightYearSpan, { coerceYear } from "./CopyrightYearSpan";
 
+const now = new Date();
 let container = null;
 
 beforeEach(() => {
@@ -18,24 +19,8 @@ afterEach(() => {
   container = null;
 });
 
-// export function coerceYear(input) {
-//   if (input instanceof Date) {
-//     return String(input.getFullYear());
-//   }
-//   if (typeof input === "number" && input > 0) {
-//     return String(input);
-//   }
-//   if (typeof input === "string" && /\d{4}/.test(input)) {
-//     return input;
-//   }
-//   throw new Error(
-//     "Invalid copyright year. Must be string matching YYYY pattern, a positive integer, or a valid Date."
-//   );
-// }
-
 describe("coerceYear", () => {
   test("should return the full year of a given date as string", () => {
-    const now = new Date();
     expect(coerceYear(now)).toBe(now.getFullYear().toString());
   });
 
@@ -71,13 +56,16 @@ describe("CopyrightYearSpan", () => {
       render(<CopyrightYearSpan></CopyrightYearSpan>, container);
     });
     expect(container.textContent).toBe("");
+    expect(container.querySelector("span")).toBeNull();
   });
 
   test("should accept integer 1999 and render it as copyright year", () => {
     act(() => {
       render(<CopyrightYearSpan year={1999}></CopyrightYearSpan>, container);
     });
-    expect(container.textContent).toBe("1999");
+    const span = container.querySelector("span");
+    expect(span).toBeDefined();
+    expect(span.textContent).toBe("1999");
   });
 
   test("should accept string 1999 and render it as copyright year", () => {
@@ -87,47 +75,32 @@ describe("CopyrightYearSpan", () => {
     expect(container.textContent).toBe("1999");
   });
 
-  // test("should accept current Date and render current year", () => {
-  //   const now = new Date();
-  //   act(() => {
-  //     render(<CopyrightYearSpan year={now}></CopyrightYearSpan>, container);
-  //   });
-  //   const span = container.querySelector("span");
-  //   console.log({
-  //     actual: container.textContent,
-  //     span
-  //   });
-  //   expect(container.textContent).toBe();
-  // });
+  test("should accept current Date and render current year", () => {
+    act(() => {
+      render(<CopyrightYearSpan year={now}></CopyrightYearSpan>, container);
+    });
+    const span = container.querySelector("span");
+    expect(span.textContent).toBe(now.getFullYear().toString());
+  });
 
-  // test("should accept year as YYYY-formatted string", () => {
-  //   act(() => {
-  //     render(<CopyrightYearSpan year="1999"></CopyrightYearSpan>, container);
-  //   });
-  //   expect(container.textContent).toBe("1999");
-  // });
+  test("should accept year as YYYY-formatted string", () => {
+    act(() => {
+      render(<CopyrightYearSpan year="1999"></CopyrightYearSpan>, container);
+    });
+    expect(container.textContent).toBe("1999");
+  });
 
-  // test("should accept four-digit integer as YYYY-formatted year", () => {
-  //   act(() => {
-  //     render(<CopyrightYearSpan year="1999"></CopyrightYearSpan>, container);
-  //   });
-  //   expect(container.textContent).toBe("1999");
-  // });
+  test("should accept four-digit integer as YYYY-formatted year", () => {
+    act(() => {
+      render(<CopyrightYearSpan year={1999}></CopyrightYearSpan>, container);
+    });
+    expect(container.textContent).toBe("1999");
+  });
 
-  // const now = new Date();
-  // const currentYear = now.getFullYear();
-
-  // test("should accept JavaScript Date object", () => {
-  //   act(() => {
-  //     render(<CopyrightYearSpan years={now}></CopyrightYearSpan>, container);
-  //   });
-  //   expect(container.textContent).toBe(now.getFullYear());
-  // });
-
-  // test("should accept JavaScript Date object", () => {
-  //   act(() => {
-  //     render(<CopyrightYearSpan years={now}></CopyrightYearSpan>, container);
-  //   });
-  //   expect(container.textContent).toBe(currentYear);
-  // });
+  test("should accept JavaScript Date object", () => {
+    act(() => {
+      render(<CopyrightYearSpan year={now}></CopyrightYearSpan>, container);
+    });
+    expect(container.textContent).toBe(now.getFullYear().toString());
+  });
 });
