@@ -24,42 +24,42 @@ yarn add react-copyright-notice-component
 For a minimal/generic copyright notice, assuming the current year:
 
 ```jsx
-<CopyrightNotice></CopyrightNotice>
+<CopyrightNotice />
 ```
 
 ```html
-<span class="copyright-notice"
-  >&copy;
-  <span property="dc:date" datatype="xsd:gYear">2019</span>
+<span class="copyright-notice">
+  &copy;
+  <span property="dc:date" datatype="xsd:gYear">2020</span>
 </span>
 ```
 
 Give it more to work with by specifying a copyright holder:
 
 ```jsx
-<CopyrightNotice copyrightHolder="Michael Bluth"></CopyrightNotice>
+<CopyrightNotice copyrightHolder="Michael Bluth" />
 ```
 
 ```html
-<span class="copyright-notice"
-  ><span>&copy;</span>
-  <span property="dc:date" datatype="xsd:gYear">2019</span>
-  <span>Michael Bluth</span></span
->
+<span class="copyright-notice">
+  <span>&copy;</span>
+  <span property="dc:date" datatype="xsd:gYear">2020</span>
+  <span>Michael Bluth</span>
+</span>
 ```
 
 ...and/or specify the year:
 
 ```jsx
-<CopyrightNotice copyrightHolder="Michael Bluth" year="2003"></CopyrightNotice>
+<CopyrightNotice copyrightHolder="Michael Bluth" year="2003" />
 ```
 
 ```html
-<span class="copyright-notice"
-  ><span>&copy;</span>
+<span class="copyright-notice">
+  <span>&copy;</span>
   <span property="dc:date" datatype="xsd:gYear">2003</span>
-  <span>Michael Bluth</span></span
->
+  <span>Michael Bluth</span>
+</span>
 ```
 
 ## Running the tests

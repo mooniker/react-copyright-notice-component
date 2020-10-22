@@ -6,9 +6,12 @@
   "scripts": {
     "start": "webpack --watch",
     "build": "webpack",
-    "test": "npx jest",
-    "test:watch": "npx jest --watchAll",
-    "test:coverage": "npx jest --coverage"
+    "test": "modern test",
+    "test:watch": "modern test --watchAll",
+    "test:coverage": "modern test --coverage",
+    "format": "modern format",
+    "lint": "modern lint",
+    "precommit": "modern precommit"
   },
   "keywords": [
     "copyright",
@@ -24,36 +27,21 @@
     "react": "^16.9.0"
   },
   "dependencies": {
-    "react": "^16.10.2",
-    "webpack": "^4.41.1"
+    "react": "^16.14.0",
+    "webpack": "^4.44.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.6.4",
-    "@babel/core": "^7.6.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
-    "@babel/preset-env": "^7.6.3",
-    "@babel/preset-react": "^7.6.3",
-    "babel-loader": "^8.0.6",
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
+    "babel-loader": "^8.1.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
-    "husky": "^3.0.9",
-    "jest": "^24.9.0",
-    "lint-staged": "^9.4.2",
     "microdata-node": "^1.0.0",
-    "prettier": "^1.18.2",
-    "react-dom": "^16.10.2",
-    "webpack-cli": "^3.3.9"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,css,json,md}": [
-      "prettier --write",
-      "git add"
-    ]
+    "react-dom": "^16.14.0",
+    "webpack-cli": "^3.3.12"
   },
   "repository": {
     "type": "git",
@@ -62,5 +50,10 @@
   "bugs": {
     "url": "https://github.com/mooniker/react-copyright-notice-component/issues"
   },
-  "homepage": "https://github.com/mooniker/react-copyright-notice-component#readme"
+  "homepage": "https://github.com/mooniker/react-copyright-notice-component#readme",
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  }
 }
