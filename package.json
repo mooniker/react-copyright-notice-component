@@ -38,7 +38,6 @@
     "@babel/preset-react": "^7.12.1",
     "babel-loader": "^8.1.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
     "microdata-node": "^2.0.0",
     "modern-node": "^2.9.0",
     "prettier-standard": "^16.4.1",

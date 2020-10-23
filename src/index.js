@@ -1,5 +1,5 @@
-import CopyrightNotice from "./CopyrightNotice";
+import CopyrightNotice from './CopyrightNotice'
 
-export const DEFAULT_COPYRIGHT_NOTICE_CLASSNAME = "copyright-notice";
+export const DEFAULT_COPYRIGHT_NOTICE_CLASSNAME = 'copyright-notice'
 
-export default CopyrightNotice;
+export default CopyrightNotice

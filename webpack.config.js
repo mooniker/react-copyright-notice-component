@@ -1,4 +1,5 @@
-const { resolve } = require('path');
+const { resolve } = require('path')
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -9,19 +10,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         include: resolve(__dirname, 'src'),
-        exclude: /(node_modules|bower_components|build)/,
+        exclude: /(node_modules|build)/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            // presets: ['env']
-          }
+          loader: 'babel-loader'
         }
       }
     ]
   },
+  resolve: {
+    extensions: ['.ts', '.jsx', '.js']
+  },
   externals: {
-    'react': 'commonjs react'
+    react: 'commonjs react'
   }
-};
+}

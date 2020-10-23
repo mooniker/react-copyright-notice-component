@@ -3,7 +3,7 @@ import Copymark from './Copymark'
 import CopyrightYearSpan from './CopyrightYearSpan'
 import CopyrightHolderSpan from './CopyrightHolderSpan'
 import RightsStatementSpan from './RightsStatementSpan'
-import { DEFAULT_COPYRIGHT_NOTICE_CLASSNAME } from './'
+import { DEFAULT_COPYRIGHT_NOTICE_CLASSNAME } from '.'
 
 const CopyrightNotice = ({
   className = DEFAULT_COPYRIGHT_NOTICE_CLASSNAME,
