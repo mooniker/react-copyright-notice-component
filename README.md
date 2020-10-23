@@ -13,7 +13,7 @@ Use this component to put a semantic copyright notice on a page with React.
 
 ### Installation
 
-```bash
+```sh
 npm install react-copyright-notice-component --save
 # or
 yarn add react-copyright-notice-component
@@ -37,7 +37,7 @@ For a minimal/generic copyright notice, assuming the current year:
 Give it more to work with by specifying a copyright holder:
 
 ```jsx
-<CopyrightNotice copyrightHolder="Michael Bluth" />
+<CopyrightNotice copyrightHolder='Michael Bluth' />
 ```
 
 ```html
@@ -51,7 +51,7 @@ Give it more to work with by specifying a copyright holder:
 ...and/or specify the year:
 
 ```jsx
-<CopyrightNotice copyrightHolder="Michael Bluth" year="2003" />
+<CopyrightNotice copyrightHolder='Michael Bluth' year='2003' />
 ```
 
 ```html
@@ -64,7 +64,7 @@ Give it more to work with by specifying a copyright holder:
 
 ## Running the tests
 
-```bash
+```sh
 npm test
 # or, for a coverage report:
 npm run test:coverage

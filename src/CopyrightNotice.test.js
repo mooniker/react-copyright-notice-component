@@ -1,7 +1,10 @@
 import React from 'react'
 import { render, unmountComponentAtNode } from 'react-dom'
 import { act } from 'react-dom/test-utils'
-import CopyrightNotice, { periodAsNeeded } from './CopyrightNotice'
+import CopyrightNotice, {
+  RightsStatementSpan,
+  periodAsNeeded
+} from './CopyrightNotice'
 
 const COPYMARK_UTF8 = '\xA9'
 // const COPYMARK_UTF16 = 'x00A9'
@@ -67,6 +70,23 @@ describe('CopyrightNotice component', () => {
     })
     const regex = [COPYMARK_UTF8, year, llcName].join(' ')
     expect(container.textContent).toMatch(regex)
+  })
+})
+
+describe('RightsStatementSpan', () => {
+  test('renders default rights statement', () => {
+    act(() => {
+      render(<RightsStatementSpan />, container)
+    })
+    expect(container.textContent).toBe('All rights reserved.')
+  })
+
+  test('renders a custum `rightStatement` as supplied', () => {
+    const someNotAll = 'Some rights reserved.'
+    act(() => {
+      render(<RightsStatementSpan rightsStatement={someNotAll} />, container)
+    })
+    expect(container.textContent).toBe(someNotAll)
   })
 })
 

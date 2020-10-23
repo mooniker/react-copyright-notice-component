@@ -1,9 +1,13 @@
 import React from 'react'
+import { number, string } from 'prop-types'
 import Copymark from './Copymark'
 import CopyrightYearSpan from './CopyrightYearSpan'
 import CopyrightHolderSpan from './CopyrightHolderSpan'
-import RightsStatementSpan from './RightsStatementSpan'
-import { DEFAULT_COPYRIGHT_NOTICE_CLASSNAME } from '.'
+
+const {
+  DEFAULT_COPYRIGHT_NOTICE_CLASSNAME = 'copyright-notice',
+  DEFAULT_RIGHTS_STATEMENT = 'All rights reserved.'
+} = process.env
 
 const CopyrightNotice = ({
   className = DEFAULT_COPYRIGHT_NOTICE_CLASSNAME,
@@ -27,13 +31,38 @@ const CopyrightNotice = ({
     >
       {copyrightHolder}
     </CopyrightHolderSpan>
-    {periodAsNeeded(copyrightHolder, rightsStatement)}
-    <RightsStatementSpan
-      className={rightsStatementClassName}
-      rightsStatement={rightsStatement}
-    />
+    {rightsStatement && (
+      <>
+        {periodAsNeeded(copyrightHolder, rightsStatement)}
+        <RightsStatementSpan
+          className={rightsStatementClassName}
+          rightsStatement={rightsStatement}
+        />
+      </>
+    )}
   </span>
 )
+
+CopyrightNotice.propTypes = {
+  className: string,
+  mark: string,
+  markClassName: string,
+  year: number,
+  yearRangeClassName: string,
+  copyrightHolder: string,
+  copyrightHolderClassName: string,
+  copyrightHolderType: string,
+  rightsStatement: string,
+  rightsStatementClassName: string
+}
+
+export const RightsStatementSpan = ({
+  rightsStatement = DEFAULT_RIGHTS_STATEMENT
+}) => <span>{rightsStatement}</span>
+
+RightsStatementSpan.propTypes = {
+  rightsStatement: string
+}
 
 /**
  * Joins given copyright holder and stement with comma if needed
