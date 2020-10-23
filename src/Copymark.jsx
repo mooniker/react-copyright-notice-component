@@ -1,16 +1,12 @@
-import React from "react";
+import React from 'react'
+import { string } from 'prop-types'
 
-function Copymark({ mark }) {
-  if (typeof mark === "string") {
-    return <span>{mark}</span>;
-  }
-  if (mark === undefined || mark) {
-    return <abbr title="Copyright">&copy;</abbr>;
-  }
-  if (mark === false) {
-    return <abbr title="Copyright">(c)</abbr>;
-  }
-  return <span>Copyright</span>;
+function Copymark ({ mark }) {
+  return typeof mark === 'string' ? <span>{mark}</span> : <abbr>&copy;</abbr>
 }
 
-export default Copymark;
+Copymark.propTypes = {
+  mark: string
+}
+
+export default Copymark
