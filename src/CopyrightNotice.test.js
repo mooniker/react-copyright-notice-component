@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, unmountComponentAtNode } from 'react-dom'
 import { act } from 'react-dom/test-utils'
-import CopyrightNotice, { DEFAULT_COPYRIGHT_NOTICE_CLASSNAME, periodAsNeeded } from './'
+import CopyrightNotice, { periodAsNeeded } from './CopyrightNotice'
 
 const COPYMARK_UTF8 = '\xA9'
 // const COPYMARK_UTF16 = 'x00A9'
@@ -70,13 +70,7 @@ describe('CopyrightNotice component', () => {
   })
 })
 
-describe('default className for CopyrightNotice component', () => {
-  test('should be defined as "copyright-notice"', () => {
-    expect(DEFAULT_COPYRIGHT_NOTICE_CLASSNAME).toBe('copyright-notice')
-  })
-})
-
-describe('periodAsNeededBetween function', () => {
+describe('periodAsNeeded function', () => {
   test('should return empty string if no rights statement supplied', () => {
     expect(periodAsNeeded('ABC LLC')).toBe('')
   })

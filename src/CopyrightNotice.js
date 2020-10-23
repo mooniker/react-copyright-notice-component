@@ -2,7 +2,6 @@ import React from 'react'
 import Copymark from './Copymark'
 import CopyrightYearSpan from './CopyrightYearSpan'
 import CopyrightHolderSpan from './CopyrightHolderSpan'
-// import periodAsNeeded from './CopyrightNotice.periodAsNeeded'
 import RightsStatementSpan from './RightsStatementSpan'
 import { DEFAULT_COPYRIGHT_NOTICE_CLASSNAME } from './'
 

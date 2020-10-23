@@ -6,9 +6,9 @@
   "scripts": {
     "start": "webpack --watch",
     "build": "webpack",
-    "test": "modern test",
-    "test:watch": "modern test --watchAll",
-    "test:coverage": "modern test --coverage",
+    "test": "modern test --env=jsdom",
+    "test:watch": "modern test --env=jsdom --watchAll",
+    "test:coverage": "modern test --env=jsdom --coverage",
     "format": "modern format",
     "lint": "modern lint",
     "precommit": "modern precommit"
